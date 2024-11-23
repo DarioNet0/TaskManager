@@ -1,5 +1,6 @@
 using TaskManager.Application;
 using TaskManager.Infrastructure;
+using TaskManager.Infrastructure.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,4 +30,13 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+await MigrateDatabase();
+
 app.Run();
+
+async Task MigrateDatabase()
+{
+    await using var scope = app.Services.CreateAsyncScope();
+
+    await DataBaseMigration.MigrateDataBase(scope.ServiceProvider);
+}
