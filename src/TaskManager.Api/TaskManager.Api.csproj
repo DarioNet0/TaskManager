@@ -19,6 +19,7 @@
     <ProjectReference Include="..\TaskManager.Application\TaskManager.Application.csproj" />
     <ProjectReference Include="..\TaskManager.Communication\TaskManager.Communication.csproj" />
     <ProjectReference Include="..\TaskManager.Exception\TaskManager.Exception.csproj" />
+    <ProjectReference Include="..\TaskManager.Infrastructure\TaskManager.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
